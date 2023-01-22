@@ -12,6 +12,7 @@ import Annonce from "layouts/authentication/TestComponents/Annonce";
 import Candidat from "layouts/authentication/TestComponents/Candidat";
 import StatistiqueData from "layouts/authentication/TestComponents/Data/StatistiqueData";
 import MultiPosting from "layouts/authentication/TestComponents/MultiPosting";
+import NotificationsTimeline from "layouts/authentication/TestComponents/NotificationsTimeline";
 import Statistique from "layouts/authentication/TestComponents/Statistique";
 import indeed from "../../assets/images/logos/Indeed.png";
 import jobUp from "../../assets/images/logos/JobUp.png";
@@ -237,6 +238,50 @@ function TestTechnique() {
                   <Statistique number="12" text="Candidats en mission" />
                   <Statistique number="4" text="Candidats en mission" />
                 </Box>
+              </Box>
+            </Box>
+          </Box>
+          {/* ROW 3 */}
+          {/* Notifications section */}
+          <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gridAutoRows="100%" gap="20px">
+            <Box
+              gridColumn="span 6"
+              display="flex"
+              flexDirection="column"
+              gap={2}
+              height="100%"
+              sx={{ background: "white", borderRadius: "0.5rem" }}
+              padding={2}
+            >
+              <Typography>Notifications</Typography>
+              <Box display="flex" flexDirection="column">
+                <NotificationsTimeline
+                  color="#03C3EC"
+                  title="Heures à saisir pour 3 candidats"
+                  subTitle="Test Fribourg"
+                />
+                <NotificationsTimeline
+                  color="#FF9F43"
+                  title="Propositions de poste à 12 candidats"
+                  subTitle="Test Genève"
+                />
+                <NotificationsTimeline
+                  color="#03C3EC"
+                  title="Documents à signer pour M.Philippot"
+                  subTitle="Test Genève"
+                />
+                <NotificationsTimeline
+                  color="#EA5455"
+                  title="Nouveau message de Emilie Philippot"
+                  subTitle="Bonjour Ahmed, je voulais savoir si vous aviez recu mes relevès d'heures"
+                />
+              </Box>
+              <Box display="flex" justifyContent="flex-end">
+                <Button
+                  sx={{ background: "#62A5FF", textTransform: "none", width: "50%", color: "#fff" }}
+                >
+                  Voir les notifications
+                </Button>
               </Box>
             </Box>
           </Box>
