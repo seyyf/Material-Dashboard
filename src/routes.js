@@ -44,10 +44,10 @@ import Notifications from "layouts/notifications";
 import Profile from "layouts/profile";
 import RTL from "layouts/rtl";
 import Tables from "layouts/tables";
+import TestTechnique from "layouts/Technique";
 
 // @mui icons
 import Icon from "@mui/material/Icon";
-import TestTechnique from "layouts/Technique";
 
 const routes = [
   {
@@ -119,7 +119,7 @@ const routes = [
     name: "Test Technique",
     key: "Test-technique",
     icon: <Icon fontSize="small">Test Technique</Icon>,
-    route: "/test/technique",
+    route: "/authentication/technique",
     component: <TestTechnique />,
   },
 ];
