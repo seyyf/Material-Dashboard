@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 function Annonce({ icon, number, text }) {
   return (
     <Box display="flex" alignItems="center" justifyContent="space-between" gap={2}>
-      <Box display="flex" gap={2.5}>
+      <Box display="flex" gap={3}>
         <Box marginTop={1}>{icon}</Box>
         <Box display="flex" flexDirection="column">
           <Typography sx={{ fontSize: "18px", fontWeight: "bold" }}>{number}</Typography>
@@ -13,7 +13,15 @@ function Annonce({ icon, number, text }) {
         </Box>
       </Box>
       <Box>
-        <Button sx={{ borderRadius: "5px", background: "#62A5FF", color: "#fff" }}>
+        <Button
+          sx={{
+            borderRadius: "5px",
+            background: "#62A5FF",
+            color: "#fff",
+            minWidth: "40px !important",
+            width: "40px",
+          }}
+        >
           <ArrowForwardIosIcon />
         </Button>
       </Box>

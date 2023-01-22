@@ -8,6 +8,11 @@ import { Box, Container, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
 import Annonce from "layouts/authentication/TestComponents/Annonce";
 import Candidat from "layouts/authentication/TestComponents/Candidat";
+import MultiPosting from "layouts/authentication/TestComponents/MultiPosting";
+import indeed from "../../assets/images/logos/Indeed.png";
+import jobUp from "../../assets/images/logos/JobUp.png";
+import talent from "../../assets/images/logos/talent.com.png";
+import valJob from "../../assets/images/logos/Valjob.png";
 import TestLayout from "../authentication/components/TestLayout";
 
 function TestTechnique() {
@@ -29,6 +34,8 @@ function TestTechnique() {
               Publier une annonce
             </Button>
           </Box>
+          {/* Candidats section */}
+
           <Box
             sx={{ background: "white", borderRadius: "0.5rem" }}
             coloredShadow="dark"
@@ -62,17 +69,20 @@ function TestTechnique() {
             gridAutoRows="100%"
             gap="20px"
           >
+            {/* Annonces section */}
+
             <Box
               gridColumn="span 3"
               display="flex"
               flexDirection="column"
               gap={2}
+              height="100%"
               sx={{ background: "white", borderRadius: "0.5rem" }}
               padding={2}
             >
               <Typography>Annonces</Typography>
 
-              <Box>
+              <Box display="flex" flexDirection="column" gap={2.3}>
                 <Annonce
                   icon={
                     <PlayArrowOutlinedIcon
@@ -143,6 +153,55 @@ function TestTechnique() {
                   number="23"
                   text="Archivées"
                 />
+              </Box>
+            </Box>
+
+            {/* Multiposting section */}
+            <Box
+              gridColumn="span 4"
+              display="flex"
+              flexDirection="column"
+              gap={2}
+              sx={{ background: "white", borderRadius: "0.5rem" }}
+              padding={2}
+            >
+              <Typography>Multiposting</Typography>
+              <Box>
+                <MultiPosting
+                  img={valJob}
+                  title="Test.com"
+                  subTitle="test.com"
+                  number="10 annonces"
+                  sx={{ borderBottom: "1px solid #eee" }}
+                />
+                <MultiPosting
+                  img={jobUp}
+                  title="Jobup"
+                  subTitle="Jobup free"
+                  number="6 annonces"
+                  subNumber="10 annonces"
+                />
+                <MultiPosting
+                  img={indeed}
+                  title="Indeed"
+                  subTitle="Indeed free"
+                  number="4 annonces"
+                  subNumber="10 annonces"
+                />
+                <MultiPosting
+                  img={talent}
+                  title="talent.com"
+                  subTitle="talent.com free"
+                  number="2 annonces"
+                  subNumber="10 annonces"
+                />
+              </Box>
+              <Box display="flex" justifyContent="flex-end">
+                <Button
+                  sx={{ background: "#62A5FF", textTransform: "none", width: "50%", color: "#fff" }}
+                >
+                  Voir les annonces
+                </Button>
               </Box>
             </Box>
           </Box>
