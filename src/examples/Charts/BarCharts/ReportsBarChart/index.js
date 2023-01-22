@@ -33,12 +33,12 @@ import MDTypography from "components/MDTypography";
 // ReportsBarChart configurations
 import configs from "examples/Charts/BarCharts/ReportsBarChart/configs";
 
-function ReportsBarChart({ color, title, description, date, chart }) {
+function ReportsBarChart({ color, title, description, date, chart, bgBox }) {
   const { data, options } = configs(chart.labels || [], chart.datasets || {});
 
   return (
     <Card sx={{ height: "100%" }}>
-      <MDBox padding="1rem">
+      <MDBox padding={`${!bgBox ? "1rem" : ""}`}>
         {useMemo(
           () => (
             <MDBox
@@ -56,23 +56,25 @@ function ReportsBarChart({ color, title, description, date, chart }) {
           ),
           [chart, color]
         )}
-        <MDBox pt={3} pb={1} px={1}>
-          <MDTypography variant="h6" textTransform="capitalize">
-            {title}
-          </MDTypography>
-          <MDTypography component="div" variant="button" color="text" fontWeight="light">
-            {description}
-          </MDTypography>
-          <Divider />
-          <MDBox display="flex" alignItems="center">
-            <MDTypography variant="button" color="text" lineHeight={1} sx={{ mt: 0.15, mr: 0.5 }}>
-              <Icon>schedule</Icon>
+        {!bgBox && (
+          <MDBox pt={3} pb={1} px={1}>
+            <MDTypography variant="h6" textTransform="capitalize">
+              {title}
             </MDTypography>
-            <MDTypography variant="button" color="text" fontWeight="light">
-              {date}
+            <MDTypography component="div" variant="button" color="text" fontWeight="light">
+              {description}
             </MDTypography>
+            <Divider />
+            <MDBox display="flex" alignItems="center">
+              <MDTypography variant="button" color="text" lineHeight={1} sx={{ mt: 0.15, mr: 0.5 }}>
+                <Icon>schedule</Icon>
+              </MDTypography>
+              <MDTypography variant="button" color="text" fontWeight="light">
+                {date}
+              </MDTypography>
+            </MDBox>
           </MDBox>
-        </MDBox>
+        )}
       </MDBox>
     </Card>
   );
@@ -90,6 +92,7 @@ ReportsBarChart.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   date: PropTypes.string.isRequired,
+  bgBox: PropTypes.string.isRequired,
   chart: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.array, PropTypes.object])).isRequired,
 };
 

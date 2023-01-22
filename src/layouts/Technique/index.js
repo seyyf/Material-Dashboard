@@ -1,14 +1,18 @@
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 import DriveFileRenameOutlineOutlinedIcon from "@mui/icons-material/DriveFileRenameOutlineOutlined";
 import Inventory2OutlinedIcon from "@mui/icons-material/Inventory2Outlined";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import PauseOutlinedIcon from "@mui/icons-material/PauseOutlined";
 import PlayArrowOutlinedIcon from "@mui/icons-material/PlayArrowOutlined";
 import RunningWithErrorsOutlinedIcon from "@mui/icons-material/RunningWithErrorsOutlined";
 import { Box, Container, Typography } from "@mui/material";
 import Button from "@mui/material/Button";
+import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import Annonce from "layouts/authentication/TestComponents/Annonce";
 import Candidat from "layouts/authentication/TestComponents/Candidat";
+import StatistiqueData from "layouts/authentication/TestComponents/Data/StatistiqueData";
 import MultiPosting from "layouts/authentication/TestComponents/MultiPosting";
+import Statistique from "layouts/authentication/TestComponents/Statistique";
 import indeed from "../../assets/images/logos/Indeed.png";
 import jobUp from "../../assets/images/logos/JobUp.png";
 import talent from "../../assets/images/logos/talent.com.png";
@@ -202,6 +206,37 @@ function TestTechnique() {
                 >
                   Voir les annonces
                 </Button>
+              </Box>
+            </Box>
+            {/* Annonces section */}
+            <Box
+              gridColumn="span 5"
+              display="flex"
+              flexDirection="column"
+              gap={2}
+              sx={{ background: "white", borderRadius: "0.5rem" }}
+              padding={2}
+            >
+              <Box display="flex" justifyContent="space-between">
+                <Typography>Statistiques</Typography>
+                <Button sx={{ color: "#62A5FF" }}>
+                  Semaine
+                  <KeyboardArrowDownIcon sx={{ marginLeft: "5px" }} />
+                </Button>
+              </Box>
+
+              <Box sx={{ marginTop: "2rem" }}>
+                <ReportsBarChart color="info" chart={StatistiqueData} bgBox />
+              </Box>
+              <Box>
+                <Box display="flex" justifyContent="space-between">
+                  <Statistique first number="5" text="Candidats en mission" />
+                  <Statistique number="34" text="Candidats en mission" />
+                </Box>
+                <Box display="flex" justifyContent="space-between">
+                  <Statistique number="12" text="Candidats en mission" />
+                  <Statistique number="4" text="Candidats en mission" />
+                </Box>
               </Box>
             </Box>
           </Box>
